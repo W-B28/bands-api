@@ -23,20 +23,20 @@ $(document).ready(() => {
 			let output = '';
 
 			output += `
-			<div class="col-4">
+			<div class="col-4" id="bandCard">
 				<div class="well text-center">
-					<h3>${tempName}</h3>
+					<h3 id="heading-name">${tempName}</h3>
 					<img src="${tempPic}" />
 					<button onclick="deleteBand()" id="deleteBand" class="btn btn-outline-danger text-center my-4">Delete</button>
 				</div>
 			</div>
 			`;
-
-
-			$('#bands').html(output)
+			console.log(output)
+			const currentContent = $('#bands').html();
+			$('#bands').html(output + currentContent)
 
 			deleteBand = _  => {
-					$('.col-4').remove();
+					$('#bandCard').remove();
 				};
 		});
 	});
