@@ -1,2 +1,11 @@
 # bands-api
-Public API Practice
+### Public API Practice
+
+ 
+This is practice hooking up a public API to filter through your favorite bands. The API is free, and we get what we pay for in this case, so please excuse any inconsistencies in your search results. The issue is related to inaccurate source data from the API itself, I hope you enjoy nonetheless :)
+
+## Tech Stack
+- HTML / CSS 
+- Javascript
+- jQuery 
+- Bootstrap
