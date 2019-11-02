@@ -1,3 +1,5 @@
+let counterDel = 0;
+
 var settings = {
 	"async": true,
 	"crossDomain": true,
@@ -23,21 +25,26 @@ $(document).ready(() => {
 			let output = '';
 
 			output += `
-			<div class="col-4" id="bandCard">
+			<div class="col-4" id="`+ counterDel +`">
 				<div class="well text-center">
 					<h3 id="heading-name">${tempName}</h3>
 					<img src="${tempPic}" />
-					<button onclick="deleteBand()" id="deleteBand" class="btn btn-outline-danger text-center my-4">Delete</button>
+					<button data-deleteId="`+ counterDel +`" class="deleteBand btn btn-outline-danger text-center my-4">Delete</button>
 				</div>
 			</div>
 			`;
-			console.log(output)
+			
+			counterDel++;
+
 			const currentContent = $('#bands').html();
 			$('#bands').html(output + currentContent)
 
-			deleteBand = _  => {
-					$('#bandCard').remove();
-				};
+
+			$('.deleteBand').click(function (e) {
+				console.log(e)
+				console.log(e.currentTarget.attributes[0]['value'])
+				$('#'+ e.currentTarget.attributes[0]['value']).remove();
+			});
 		});
 	});
 });
