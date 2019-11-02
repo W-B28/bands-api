@@ -25,15 +25,16 @@ $(document).ready(() => {
 			let output = '';
 
 			output += `
-			<div class="col-4" id="`+ counterDel +`">
-				<div class="well text-center">
-					<h3 id="heading-name">${tempName}</h3>
-					<img src="${tempPic}" />
-					<button data-deleteId="`+ counterDel +`" class="deleteBand btn btn-outline-danger text-center my-4">Delete</button>
-				</div>
+			<div class="row" id="`+ counterDel +`">
+				<div class="card mx-auto text-center"
+					<strong><h2 id="heading-name">${tempName}</h2></strong><hr>
+					<img src="${tempPic}" /><br>
+					<button data-deleteId="`+ counterDel +`" class="deleteBand btn btn-danger text-center my-4">Delete</button>
+					<hr>
 			</div>
+		</div>
 			`;
-			
+
 			counterDel++;
 
 			const currentContent = $('#bands').html();
@@ -41,8 +42,6 @@ $(document).ready(() => {
 
 
 			$('.deleteBand').click(function (e) {
-				console.log(e)
-				console.log(e.currentTarget.attributes[0]['value'])
 				$('#'+ e.currentTarget.attributes[0]['value']).remove();
 			});
 		});
